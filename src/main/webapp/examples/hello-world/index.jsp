@@ -45,10 +45,13 @@
     <br/>
     <h1>Hello <span id='username'></span></h1>
     
-    <button onclick="refreshSF()">Refresh SF</button>
+    <button onclick="refreshSF()">SF</button>
     <script>
         function refreshSF() {
-            console.log('test');
+            var event = new Event('refreshsfportal');
+            console.log('test2');
+            this.dispatchEvent(event);
+            console.log('test3');
         }
     </script>
 </body>
