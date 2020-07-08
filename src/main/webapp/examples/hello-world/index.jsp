@@ -55,7 +55,7 @@
 <body>
     <br/>
     <h1>Hello <span id='username'></span></h1>
-    
+    deploy app in https://dashboard.heroku.com/apps/webarchitectheroku/deploy/github
     <button onclick="refreshSF()">SF1</button>
     
 </body>
