@@ -39,13 +39,7 @@
             Sfdc.canvas.byId('username').innerHTML = sr.context.user.fullName;
         });
 
-    </script>    
-</head>
-<body>
-    <br/>
-    <h1>Hello <span id='username'></span></h1>
-    
-    <button onclick="refreshSF()">SF</button>
+    </script>  
     <script>
         function refreshSF() {
             Sfdc.canvas(function() {
@@ -54,6 +48,13 @@
                     {name : "refreshsfportal", payload : {status : 'Completed'}});
             });
         }
-    </script>
+    </script>  
+</head>
+<body>
+    <br/>
+    <h1>Hello <span id='username'></span></h1>
+    
+    <button onclick="refreshSF()">SF1</button>
+    
 </body>
 </html>
