@@ -43,13 +43,11 @@
     <script>
         function refreshSF() {
             console.log('prior to publish');
-            Sfdc.canvas(function() {
-                sr = JSON.parse('<%=signedRequestJson%>');
-                Sfdc.canvas.oauth.token(sr.oauthToken);
-                console.log(sr);
-                Sfdc.canvas.client.publish(sr.client,
-                    {name : "refreshsfportal", payload : {status : 'Completed'}});
-            });
+            var sr = JSON.parse('<%=signedRequestJson%>');
+            var srClient = sr.client;
+            Sfdc.canvas.client.publish(
+                srClient,
+                {name : "refreshsfportal", payload : {status : 'Completed'}});
             console.log('after publish');
         }
     </script>  
