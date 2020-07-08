@@ -39,16 +39,17 @@
             Sfdc.canvas.byId('username').innerHTML = sr.context.user.fullName;
         });
 
-    </script>
-    <script>
-        function refreshSF(){
-            console.log('test');
-        }
-    </script>
+    </script>    
 </head>
 <body>
     <br/>
     <h1>Hello <span id='username'></span></h1>
-    <button onclick="refreshSF();">Refresh Salesforce</button>
+    
+    <button onclick="refreshSF()">Refresh SF</button>
+    <script>
+        function refreshSF() {
+            console.log('test');
+        }
+    </script>
 </body>
 </html>
