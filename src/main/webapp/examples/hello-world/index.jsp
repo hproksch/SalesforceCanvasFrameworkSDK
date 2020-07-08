@@ -40,9 +40,15 @@
         });
 
     </script>
+    <script>
+        function refreshSF(){
+            console.log('test');
+        }
+    </script>
 </head>
 <body>
     <br/>
     <h1>Hello <span id='username'></span></h1>
+    <button onclick="refreshSF();">Refresh Salesforce</button>
 </body>
 </html>
