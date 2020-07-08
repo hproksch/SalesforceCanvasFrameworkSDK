@@ -47,12 +47,11 @@
     
     <button onclick="refreshSF()">SF</button>
     <script>
-        function refreshSF() {
-            var event = new Event('refreshsfportal');
-            console.log('test2');
-            this.dispatchEvent(event);
-            console.log('test3');
-        }
+        Sfdc.canvas(function() {
+            sr = JSON.parse('<%=signedRequestJson%>');
+            Sfdc.canvas.client.publish(sr.client,
+                {name : "refreshsfportal", payload : {status : 'Completed'}});
+        });
     </script>
 </body>
 </html>
