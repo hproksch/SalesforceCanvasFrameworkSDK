@@ -37,7 +37,25 @@
     <script>
         function refreshSF() {
             console.log('prior to publish');
-            
+            Sfdc.canvas(function() {
+				var context;
+				var uri;
+
+				if (! Sfdc.canvas.oauth.loggedin()) {
+					uri = Sfdc.canvas.oauth.loginUrl();
+					Sfdc.canvas.oauth.login(
+				{uri : uri,
+				params: {
+						  display : "touch",
+				  response_type : "token",
+				  client_id : "3MVG9lcxCTdG2VbvpPUJ_pbIGpNsoGvs5h69zw6JS2eWQIvw5xPSA0WSXel86lYe1zenUMUGeXl_j8UbLrBkg", //Add Your Consumer ID
+				  redirect_uri : encodeURIComponent("https://webarchitectheroku.herokuapp.com/sdk/callback.html") //Add your Callback URL
+				}});
+				}
+				if(Sfdc.canvas.oauth.loggedin()){
+			  context = Sfdc.canvas.client.ctx(contextCallback, Sfdc.canvas.oauth.client());
+			}
+	
 			var srClient = Sfdc.canvas.oauth.client();
             Sfdc.canvas.client.publish(
                 srClient,
