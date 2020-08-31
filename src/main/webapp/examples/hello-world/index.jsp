@@ -32,12 +32,7 @@
             alert("This canvas app must be included within an iframe");
         }
 
-      
-    </script>  
-    <script>
-        function refreshSF() {
-            console.log('prior to publish');
-            Sfdc.canvas(function() {
+		Sfdc.canvas(function() {
 				var context;
 				var uri;
 
@@ -55,6 +50,11 @@
 				if(Sfdc.canvas.oauth.loggedin()){
 			  context = Sfdc.canvas.client.ctx(contextCallback, Sfdc.canvas.oauth.client());
 			}
+    </script>  
+    <script>
+        function refreshSF() {
+            console.log('prior to publish');
+            
 	
 			var srClient = Sfdc.canvas.oauth.client();
             Sfdc.canvas.client.publish(
