@@ -3,14 +3,14 @@
 <%
     // Pull the signed request out of the request body and verify/decode it.
     Map<String, String[]> parameters = request.getParameterMap();
-    String[] signedRequest = parameters.get("signed_request");
-    if (signedRequest == null) {%>
-        This App must be invoked via a signed request!<%
-        return;
-    }
-    //String yourConsumerSecret=System.getenv("CANVAS_CONSUMER_SECRET");
+//    String[] signedRequest = parameters.get("signed_request");
+//    if (signedRequest == null) {%>
+//        This App must be invoked via a signed request!<%
+//        return;
+//    }
+
     String yourConsumerSecret="92EE3228B95B908327CC64B206C0EA32A71A7AC3CA24A217CF5EE9759C2AC411";
-    String signedRequestJson = SignedRequest.verifyAndDecodeAsJson(signedRequest[0], yourConsumerSecret);
+//    String signedRequestJson = SignedRequest.verifyAndDecodeAsJson(signedRequest[0], yourConsumerSecret);
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -43,8 +43,9 @@
     <script>
         function refreshSF() {
             console.log('prior to publish');
-            var sr = JSON.parse('<%=signedRequestJson%>');
-            var srClient = sr.client;
+            //var sr = JSON.parse('<%=signedRequestJson%>');
+            //var srClient = sr.client;
+			var srClient = Sfdc.canvas.oauth.client();
             Sfdc.canvas.client.publish(
                 srClient,
                 {name : "refreshsfportal", payload : {status : 'Completed'}});
