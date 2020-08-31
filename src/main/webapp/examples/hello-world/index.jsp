@@ -37,8 +37,7 @@
     <script>
         function refreshSF() {
             console.log('prior to publish');
-            //var sr = JSON.parse('<%=signedRequestJson%>');
-            //var srClient = sr.client;
+            
 			var srClient = Sfdc.canvas.oauth.client();
             Sfdc.canvas.client.publish(
                 srClient,
