@@ -41,10 +41,7 @@
     </script>  
     <script>
         function refreshSF() {
-			alert('test');
-            console.log('prior to publish');
-            
-	
+			console.log('prior to publish');
 			var srClient = Sfdc.canvas.oauth.client();
             Sfdc.canvas.client.publish(
                 srClient,
