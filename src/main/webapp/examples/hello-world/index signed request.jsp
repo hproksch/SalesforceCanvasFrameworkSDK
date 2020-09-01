@@ -1,3 +1,18 @@
+<%@ page import="canvas.SignedRequest" %>
+<%@ page import="java.util.Map" %>
+<%
+    // Pull the signed request out of the request body and verify/decode it.
+    Map<String, String[]> parameters = request.getParameterMap();
+    String[] signedRequest = parameters.get("signed_request");
+    if (signedRequest == null) {%>
+        This App must be invoked via a signed request!<%
+        return;
+    }
+    //String yourConsumerSecret=System.getenv("CANVAS_CONSUMER_SECRET");
+    String yourConsumerSecret="92EE3228B95B908327CC64B206C0EA32A71A7AC3CA24A217CF5EE9759C2AC411";
+    String signedRequestJson = SignedRequest.verifyAndDecodeAsJson(signedRequest[0], yourConsumerSecret);
+%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
@@ -12,42 +27,25 @@
     <script type="text/javascript" src="/scripts/json2.js"></script>
 
     <script>
-		debugger;
         if (self === top) {
             // Not in Iframe
             alert("This canvas app must be included within an iframe");
         }
-
-		var context;
-		var uri;
-
-/*		if (! Sfdc.canvas.oauth.loggedin()) {
-			uri = Sfdc.canvas.oauth.loginUrl();
-			Sfdc.canvas.oauth.login(
-				{uri : uri,
-				params: {
-					display : "touch",
-					response_type : "token",
-					client_id : "3MVG9lcxCTdG2VbvpPUJ_pbIGpNsoGvs5h69zw6JS2eWQIvw5xPSA0WSXel86lYe1zenUMUGeXl_j8UbLrBkg", //Add Your Consumer ID
-					redirect_uri : encodeURIComponent("https://webarchitectheroku.herokuapp.com/sdk/callback.html") //Add your Callback URL
-					}
-				}
-			);
-		}
-		if(Sfdc.canvas.oauth.loggedin()){
-			context = Sfdc.canvas.client.ctx(contextCallback, Sfdc.canvas.oauth.client());
-		}
-		*/
-		
+      //  Sfdc.canvas(function() {
+      //      var sr = JSON.parse('<%=signedRequestJson%>');
+            // Save the token
+      //      Sfdc.canvas.oauth.token(sr.oauthToken);
+      //      Sfdc.canvas.byId('username').innerHTML = sr.context.user.fullName;
+      //  });
     </script>  
     <script>
         function refreshSF() {
-			console.log('prior to publish');
-			var srClient = Sfdc.canvas.oauth.client();
+            console.log('prior to publish');
+            var sr = JSON.parse('<%=signedRequestJson%>');
+            var srClient = sr.client;
             Sfdc.canvas.client.publish(
                 srClient,
                 {name : "refreshsfportal", payload : {status : 'Completed'}});
-				
             console.log('after publish');
         }
     </script>  
