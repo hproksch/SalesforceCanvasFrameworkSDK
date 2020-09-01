@@ -35,6 +35,7 @@
 				}
 			);
 		}
+		console.log('Sfdc.canvas.oauth.loggedin()' + Sfdc.canvas.oauth.loggedin());
 		if(Sfdc.canvas.oauth.loggedin()){
 			context = Sfdc.canvas.client.ctx(contextCallback, Sfdc.canvas.oauth.client());
 		}
