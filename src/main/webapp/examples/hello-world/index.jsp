@@ -12,8 +12,7 @@
     <script type="text/javascript" src="/scripts/json2.js"></script>
 
     <script>
-		debugger;
-        if (self === top) {
+		if (self === top) {
             // Not in Iframe
             alert("This canvas app must be included within an iframe");
         }
