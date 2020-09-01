@@ -26,7 +26,6 @@
 			Sfdc.canvas.oauth.login(
 				{uri : uri,
 				params: {
-					display : "touch",
 					response_type : "token",
 					client_id : "3MVG9lcxCTdG2VbvpPUJ_pbIGpNsoGvs5h69zw6JS2eWQIvw5xPSA0WSXel86lYe1zenUMUGeXl_j8UbLrBkg", //Add Your Consumer ID
 					redirect_uri : encodeURIComponent("https://webarchitectheroku.herokuapp.com/sdk/callback.html") //Add your Callback URL
