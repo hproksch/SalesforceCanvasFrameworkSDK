@@ -21,7 +21,8 @@
 		var context;
 		var uri;
 
-/*		if (! Sfdc.canvas.oauth.loggedin()) {
+
+		if (! Sfdc.canvas.oauth.loggedin()) {
 			uri = Sfdc.canvas.oauth.loginUrl();
 			Sfdc.canvas.oauth.login(
 				{uri : uri,
@@ -37,8 +38,7 @@
 		if(Sfdc.canvas.oauth.loggedin()){
 			context = Sfdc.canvas.client.ctx(contextCallback, Sfdc.canvas.oauth.client());
 		}
-		*/
-		context = Sfdc.canvas.client.ctx(contextCallback, Sfdc.canvas.oauth.client());
+		
 		
     </script>  
     <script>
