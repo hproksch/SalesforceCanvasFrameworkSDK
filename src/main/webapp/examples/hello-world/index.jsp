@@ -38,6 +38,7 @@
 			context = Sfdc.canvas.client.ctx(contextCallback, Sfdc.canvas.oauth.client());
 		}
 		*/
+		context = Sfdc.canvas.client.ctx(contextCallback, Sfdc.canvas.oauth.client());
 		
     </script>  
     <script>
