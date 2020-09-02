@@ -33,11 +33,7 @@
 				}
 			);
 		}
-		console.log('Sfdc.canvas.oauth.loggedin()' + Sfdc.canvas.oauth.loggedin());
-		if(Sfdc.canvas.oauth.loggedin()){
-			context = Sfdc.canvas.client.ctx(contextCallback, Sfdc.canvas.oauth.client());
-		}
-		
+		console.log('Sfdc.canvas.oauth.loggedin()' + Sfdc.canvas.oauth.loggedin());	
 		
     </script>  
     <script>
@@ -45,6 +41,8 @@
 			console.log('prior to publish');
 			var srClient = Sfdc.canvas.oauth.client();
 			console.log(srClient);
+			var manualClient = {"instanceId":"_:Hello_Webarchitect:j_id0:j_id2:canvasapp", "targetOrigin":"https://test-fujitsu.cs88.force.com", "oauthToken":"00D9E0000004iDJ!AQUAQM5JSuV.f.XmxqkIakPr3rP0u6V.FRijIH9JLoDBW4JXsUi.gN42VYWVgQmVsfYhsZxydIlNGFCG7arTRn00dznrxeGH"};
+			console.log(manualClient);
             Sfdc.canvas.client.publish(
                 srClient,
                 {name : "refreshsfportal", payload : {status : 'Completed'}});
