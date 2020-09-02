@@ -21,7 +21,7 @@
 		var uri;
 
 
-		if (! Sfdc.canvas.oauth.loggedin()) {
+/*		if (! Sfdc.canvas.oauth.loggedin()) {
 			uri = Sfdc.canvas.oauth.loginUrl();
 			Sfdc.canvas.oauth.login(
 				{uri : uri,
@@ -34,14 +34,14 @@
 			);
 		}
 		console.log('Sfdc.canvas.oauth.loggedin()' + Sfdc.canvas.oauth.loggedin());	
-		
+		*/
     </script>  
     <script>
         function refreshSF() {
 			console.log('prior to publish');
 			var srClient = Sfdc.canvas.oauth.client();
 			console.log(srClient);
-			var manualClient = {"instanceId":"_:Hello_Webarchitect:j_id0:j_id2:canvasapp", "targetOrigin":"https://test-fujitsu.cs88.force.com", "oauthToken":"00D9E0000004iDJ!AQUAQM5JSuV.f.XmxqkIakPr3rP0u6V.FRijIH9JLoDBW4JXsUi.gN42VYWVgQmVsfYhsZxydIlNGFCG7arTRn00dznrxeGH"};
+			var manualClient = {"instanceId":"_:Hello_Webarchitect:j_id0:j_id2:canvasapp", "targetOrigin":"https://test-fujitsu.cs88.force.com", "oauthToken":"00D9E0000004iDJ!AQUAQIZT09tEZcAfzzIpoQ_pyMYSc_hOuO3EU4CYuiCA8EMcaSrMQppR.ubo6IAn05wSsSFotpQjVNkgKhD7DASQre0hJoom"};
 			console.log(manualClient);
             Sfdc.canvas.client.publish(
                 srClient,
