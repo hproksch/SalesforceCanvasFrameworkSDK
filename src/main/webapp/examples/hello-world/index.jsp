@@ -44,7 +44,7 @@
 			var manualClient = {"instanceId":"_:Hello_Webarchitect:j_id0:j_id2:canvasapp", "targetOrigin":"https://test-fujitsu.cs88.force.com", "oauthToken":"00D9E0000004iDJ!AQUAQIZT09tEZcAfzzIpoQ_pyMYSc_hOuO3EU4CYuiCA8EMcaSrMQppR.ubo6IAn05wSsSFotpQjVNkgKhD7DASQre0hJoom"};
 			console.log(manualClient);
             Sfdc.canvas.client.publish(
-                srClient,
+                manualClient,
                 {name : "refreshsfportal", payload : {status : 'Completed'}});
 				
             console.log('after publish');
