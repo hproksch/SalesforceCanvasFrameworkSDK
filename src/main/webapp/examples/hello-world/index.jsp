@@ -44,6 +44,7 @@
         function refreshSF() {
 			console.log('prior to publish');
 			var srClient = Sfdc.canvas.oauth.client();
+			console.log(srClient);
             Sfdc.canvas.client.publish(
                 srClient,
                 {name : "refreshsfportal", payload : {status : 'Completed'}});
