@@ -40,8 +40,10 @@
         function refreshSF() {
 			console.log('prior to publish');
 			var srClient = Sfdc.canvas.oauth.client();
-			console.log(srClient);			
-			var manualClient = {"instanceId":srClient.instanceId, "targetOrigin":srClient.targetOrigin, "oauthToken":"00D9E0000004iDJ!AQUAQIZT09tEZcAfzzIpoQ_pyMYSc_hOuO3EU4CYuiCA8EMcaSrMQppR.ubo6IAn05wSsSFotpQjVNkgKhD7DASQre0hJoom"};
+			console.log(srClient);
+			var oauthtokencur = "00D9E0000004iDJ!AQUAQK.sG6PYUcw2zn5IgZOzCXtUsEIMzAPVvVNVIKulc79SDBjS.hXsDkwROzskbdykhwQc7rslEjToZ7U4A4eXnHWn.Yo."			
+			//oauthtokencur = "00D9E0000004iDJ!AQUAQIZT09tEZcAfzzIpoQ_pyMYSc_hOuO3EU4CYuiCA8EMcaSrMQppR.ubo6IAn05wSsSFotpQjVNkgKhD7DASQre0hJoom"
+			var manualClient = {"instanceId":srClient.instanceId, "targetOrigin":srClient.targetOrigin, "oauthToken":oauthtokencur};
 			console.log(manualClient);
             Sfdc.canvas.client.publish(
                 manualClient,
