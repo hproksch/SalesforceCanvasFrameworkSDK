@@ -40,9 +40,9 @@
         function refreshSF() {
 			console.log('prior to publish');
 			var srClient = Sfdc.canvas.oauth.client();
-			console.log(srClient);
-			//var manualClient = {"instanceId":"_:Hello_Webarchitect:j_id0:j_id2:canvasapp", "targetOrigin":"https://test-fujitsu.cs88.force.com", "oauthToken":"00D9E0000004iDJ!AQUAQIZT09tEZcAfzzIpoQ_pyMYSc_hOuO3EU4CYuiCA8EMcaSrMQppR.ubo6IAn05wSsSFotpQjVNkgKhD7DASQre0hJoom"};
-			var manualClient = {"instanceId":"Hello_Webarchitect", "targetOrigin":"https://test-fujitsu.cs88.force.com", "oauthToken":"00D9E0000004iDJ!AQUAQIZT09tEZcAfzzIpoQ_pyMYSc_hOuO3EU4CYuiCA8EMcaSrMQppR.ubo6IAn05wSsSFotpQjVNkgKhD7DASQre0hJoom"};
+			console.log(srClient.instanceId);
+			console.log(srClient.targetOrigin);
+			var manualClient = {"instanceId":"_:Hello_Webarchitect:j_id0:j_id2:canvasapp", "targetOrigin":"https://test-fujitsu.cs88.force.com", "oauthToken":"00D9E0000004iDJ!AQUAQIZT09tEZcAfzzIpoQ_pyMYSc_hOuO3EU4CYuiCA8EMcaSrMQppR.ubo6IAn05wSsSFotpQjVNkgKhD7DASQre0hJoom"};
 			console.log(manualClient);
             Sfdc.canvas.client.publish(
                 manualClient,
