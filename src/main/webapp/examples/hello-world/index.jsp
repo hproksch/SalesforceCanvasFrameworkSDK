@@ -60,9 +60,8 @@
 			console.log('prior to publish');
 			var srClient = Sfdc.canvas.oauth.client();
 			
-			ctxlink.onclick=function() {
-				Sfdc.canvas.client.ctx(function(msg) {console.log(msg.payload);}, srClient);
-			}
+			Sfdc.canvas.client.ctx(function(msg) {console.log(msg.payload);}, srClient);
+			
 			
 			console.log(srClient);
 			var oauthtokencur = "dummyvalue";//"00D9E0000004iDJ!AQUAQK.sG6PYUcw2zn5IgZOzCXtUsEIMzAPVvVNVIKulc79SDBjS.hXsDkwROzskbdykhwQc7rslEjToZ7U4A4eXnHWn.Yo."			
