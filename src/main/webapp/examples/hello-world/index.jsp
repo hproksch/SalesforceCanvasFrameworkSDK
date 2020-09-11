@@ -3,7 +3,8 @@
 <head>
 
     <title>Hello World Canvas Example</title>
-<%= request.getParameter("SPRId")%>)
+<%= request.getParameter("SPRId")%>
+<%= request%>
 
     <link rel="stylesheet" type="text/css" href="/sdk/css/canvas.css" />
 
