@@ -61,7 +61,7 @@
 			var srClient = Sfdc.canvas.oauth.client();
 			
 			ctxlink.onclick=function() {
-				Sfdc.canvas.client.ctx(callback, srClient)};
+				Sfdc.canvas.client.ctx(callback, srClient);
 			}
 			
 			console.log(srClient);
