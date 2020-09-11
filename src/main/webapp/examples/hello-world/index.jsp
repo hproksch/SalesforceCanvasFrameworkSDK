@@ -49,9 +49,21 @@
 		*/
     </script>  
     <script>
+	function callback(msg) {
+       if (msg.status !== 200) {
+          alert("Error: " + msg.status);
+          return;
+       }
+       alert("Payload: ", msg.payload);
+    }
         function refreshSF() {
 			console.log('prior to publish');
 			var srClient = Sfdc.canvas.oauth.client();
+			
+			ctxlink.onclick=function() {
+				Sfdc.canvas.client.ctx(callback, srClient)};
+			}
+			
 			console.log(srClient);
 			var oauthtokencur = "dummyvalue";//"00D9E0000004iDJ!AQUAQK.sG6PYUcw2zn5IgZOzCXtUsEIMzAPVvVNVIKulc79SDBjS.hXsDkwROzskbdykhwQc7rslEjToZ7U4A4eXnHWn.Yo."			
 			var manualClient = {"instanceId":srClient.instanceId, "targetOrigin":srClient.targetOrigin, "oauthToken":oauthtokencur};
