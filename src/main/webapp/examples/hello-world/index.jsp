@@ -31,8 +31,7 @@
 			  return;
 		   }
 		   console.log("Payload: ", msg.payload);
-		}
-		
+		}		
 		if (self === top) {
             // Not in Iframe
             alert("This canvas app must be included within an iframe");
